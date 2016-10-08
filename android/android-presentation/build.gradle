@@ -1,0 +1,68 @@
+apply plugin: 'idea'
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: rootProject.RETROLAMBDA_PLUGIN
+
+android {
+  compileSdkVersion rootProject.COMPILE_SDK
+  buildToolsVersion rootProject.BUILD_TOOLS
+
+  defaultConfig {
+    applicationId rootProject.APP_PACKAGE + ".todo.presentation"
+    minSdkVersion rootProject.MIN_SDK
+    targetSdkVersion rootProject.TARGET_SDK
+    versionCode rootProject.APP_VERSION
+    versionName rootProject.APP_VERSION_NAME
+    vectorDrawables.useSupportLibrary true
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+    }
+    debug {
+      applicationIdSuffix ".debug"
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+    }
+  }
+  lintOptions {
+    abortOnError true
+    disable 'InvalidPackage'
+  }
+}
+
+
+dependencies {
+  compile project(":android:android-domain")
+  compile project(":android:android-data")
+
+  /* Main */
+  apt rootProject.deps.daggerCompiler
+  apt rootProject.deps.butterknifeCompiler
+  provided rootProject.deps.javaxAnnotations
+
+  compile rootProject.deps.androidSupport
+  compile rootProject.deps.androidDesign
+  compile rootProject.deps.cardView
+  compile rootProject.deps.butterknife
+  compile rootProject.deps.epoxy
+  compile rootProject.deps.dagger
+  compile rootProject.deps.glide
+  compile rootProject.deps.timber
+  compile rootProject.deps.apacheCommonsLang
+  compile rootProject.deps.okhttp3
+  compile rootProject.deps.okhttp3Logger
+
+  /* RxJava/Android */
+  compile rootProject.deps.rxjava
+  compile rootProject.deps.rxandroid
+
+  /* Test */
+  testCompile rootProject.deps.junit
+  testCompile rootProject.deps.mockito
+}

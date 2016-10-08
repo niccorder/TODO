@@ -1,0 +1,60 @@
+/**
+ *
+ *        DEPENDENCIES/VERSIONING/PROJECT SETTINGS
+ *
+ */
+rootProject.ext.APP_PACKAGE = "com.niccorder"
+rootProject.ext.APP_VERSION = 100000
+rootProject.ext.APP_VERSION_NAME = "1.0.0"
+rootProject.ext.BUILD_TOOLS = "23.0.3"
+rootProject.ext.MIN_SDK = 16
+rootProject.ext.COMPILE_SDK = 24
+rootProject.ext.TARGET_SDK = 24
+
+/**
+ *
+ *        DEPENDENCY VERSIONS
+ *
+ */
+def ANDROID_SUPPORT = "24.2.1"
+def BUTTERKNIFE = "8.4.0"
+def DAGGER = "2.7"
+def EPOXY = "1.3.0"
+def GLIDE = "3.7.0"
+def JAVAX_ANNOTATIONS = "1.0"
+def JAVAX_INJECT = "1"
+def RXJAVA = "1.1.6"
+def RXANDROID = "1.2.1"
+def RETROFIT = "2.1.0"
+def OKHTTP3 = "3.4.1"
+def APACHE_LANG_UTILS = "3.4"
+def TIMBER = "4.3.1"
+def JUNIT = "4.12"
+def MOCKITO = "1.10.19"
+
+rootProject.ext.RETROLAMBDA_PLUGIN = "me.tatarka.retrolambda"
+
+rootProject.ext.deps = [
+        androidSupport      :   "com.android.support:appcompat-v7:$ANDROID_SUPPORT",
+        androidDesign       :   "com.android.support:design:$ANDROID_SUPPORT",
+        cardView            :   "com.android.support:cardview-v7:$ANDROID_SUPPORT",
+        butterknife         :   "com.jakewharton:butterknife:$BUTTERKNIFE",
+        butterknifeCompiler :   "com.jakewharton:butterknife-compiler:$BUTTERKNIFE",
+        dagger              :   "com.google.dagger:dagger:$DAGGER",
+        daggerCompiler      :   "com.google.dagger:dagger-compiler:$DAGGER",
+        epoxy               :   "com.airbnb.android:epoxy:$EPOXY",
+        glide               :   "com.github.bumptech.glide:glide:$GLIDE",
+        javaxInject         :   "javax.inject:javax.inject:$JAVAX_INJECT",
+        javaxAnnotations    :   "javax.annotation:jsr250-api:$JAVAX_ANNOTATIONS",
+        timber              :   "com.jakewharton.timber:timber:$TIMBER",
+        rxandroid           :   "io.reactivex:rxandroid:$RXANDROID",
+        rxjava              :   "io.reactivex:rxjava:$RXJAVA",
+        retrofit            :   "com.squareup.retrofit2:retrofit:$RETROFIT",
+        retrofitRxjava      :   "com.squareup.retrofit2:adapter-rxjava:$RETROFIT",
+        retrofitGson        :   "com.squareup.retrofit2:converter-gson:$RETROFIT",
+        okhttp3             :   "com.squareup.okhttp3:okhttp:$OKHTTP3",
+        okhttp3Logger       :   "com.squareup.okhttp3:logging-interceptor:$OKHTTP3",
+        apacheCommonsLang   :   "org.apache.commons:commons-lang3:$APACHE_LANG_UTILS",
+        junit               :   "junit:junit:$JUNIT",
+        mockito             :   "org.mockito:mockito-core:$MOCKITO"
+]

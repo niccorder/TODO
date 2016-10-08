@@ -39,3 +39,10 @@ rootProject.ext.testCompileDeps = [
         scalaTest             :     "org.scalatest:scalatest_2.11:$SCALA_TEST"
 ]
 
+/* Test Runtime Dependencies */
+
+def SCALA_XML = "1.0.5"
+
+rootProject.ext.testRuntimeDeps = [
+        scalaXml              :     "org.scala-lang.modules:scala-xml_2.11:$SCALA_XML"
+]

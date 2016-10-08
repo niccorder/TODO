@@ -1,3 +1,6 @@
 rootProject.name = 'TODO'
 
+include ':android:android-data'
+include ':android:android-domain'
+include ':android:android-presentation'
 include ':source:source-presentation'

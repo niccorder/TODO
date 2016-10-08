@@ -4,7 +4,8 @@ apply from: "$rootDir/source/config.gradle"
 
 def deps = rootProject.ext.compileDeps
 def testDeps = rootProject.ext.testCompileDeps
-def testRuntime = rootProject.ext.runtimeDeps
+def runtimeDeps = rootProject.ext.runtimeDeps
+def testRuntimeDeps = rootProject.ext.testRuntimeDeps
 
 dependencies {
   compile deps.finagleCore
@@ -14,10 +15,13 @@ dependencies {
   compile deps.twitterServer
   compile deps.twitterStats
 
+  runtime runtimeDeps.finagleStats
+
   testCompile testDeps.junit
   testCompile testDeps.mockito
+  testCompile testDeps.scalaTest
 
-  runtime testRuntime.finagleStats
+  testRuntime testRuntimeDeps.scalaXml
 }
 
 repositories {

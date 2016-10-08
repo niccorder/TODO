@@ -1,0 +1,6 @@
+<resources>
+
+    <!-- Application/Activity Strings -->
+    <string name="app_name">Shiparoo</string>
+    <string name="main_activity_title">Shiparoo</string>
+</resources>
