@@ -1,0 +1,21 @@
+apply plugin: 'idea'
+
+buildscript {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+}
+
+subprojects {
+  apply plugin: 'scala'
+  apply from: "$rootDir/source/config.gradle"
+
+  repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "http://maven.twttr.com" }
+  }
+}
+
+apply from: "$rootDir/source/config.gradle"

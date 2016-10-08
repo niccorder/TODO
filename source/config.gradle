@@ -1,0 +1,41 @@
+/**
+ *     Gradle Dependencies and Overall Configuration
+ */
+
+/* Compile Dependencies */
+
+def FINAGLE = "6.31.0"
+def SCALA = "2.11.8"
+def TWITTER_SERVER = "1.23.0"
+def TWITTER_UTIL = "6.31.0"
+
+rootProject.ext.compileDeps = [
+        finagleCore           :     "com.twitter:finagle-core_2.11:$FINAGLE",
+        finagleThrift         :     "com.twitter:finagle-thrift_2.11:$FINAGLE",
+        scala                 :     "org.scala-lang:scala-library:$SCALA",
+        twitterCore           :     "com.twitter:util-core_2.11:$TWITTER_UTIL",
+        twitterServer         :     "com.twitter:twitter-server_2.11:$TWITTER_SERVER",
+        twitterStats          :     "com.twitter:util-stats_2.11:$TWITTER_UTIL"
+]
+
+
+/* Runtime Dependencies */
+
+def FINAGLE_STATS = "6.31.0"
+
+rootProject.ext.runtimeDeps = [
+        finagleStats          :     "com.twitter:finagle-stats_2.11:$FINAGLE_STATS"
+]
+
+/* Test Compile Dependencies */
+
+def JUNIT = "4.12"
+def MOCKITO = "2.1.0"
+def SCALA_TEST = "3.0.0"
+
+rootProject.ext.testCompileDeps = [
+        junit                 :     "junit:junit:$JUNIT",
+        mockito               :     "org.mockito:mockito-core:$MOCKITO",
+        scalaTest             :     "org.scalatest:scalatest_2.11:$SCALA_TEST"
+]
+
