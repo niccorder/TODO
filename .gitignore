@@ -1,3 +1,9 @@
+## IntelliJ ###
+**/*.iml
+**/*.ipr
+**/*.iws
+**/build
+.idea/*
 ## Scala ###
 *.class
 *.log
