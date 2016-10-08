@@ -1,19 +1,21 @@
 apply plugin: 'idea'
-apply plugin: 'scala'
 
-def deps = rootProject.ext.compileDeps
-def testDeps = rootProject.ext.testCompileDeps
-def testRuntime = rootProject.ext.runtimeDeps
-
-dependencies {
-  compile deps.scala
-
-  testCompile testDeps.junit
-  testCompile testDeps.mockito
-
-  runtime testRuntime.finagleStats
+buildscript {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
 }
 
-repositories {
-  maven { url "http://maven.twttr.com" }
+subprojects {
+  apply plugin: 'scala'
+  apply from: "$rootDir/source/config.gradle"
+
+  repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "http://maven.twttr.com" }
+  }
 }
+
+apply from: "$rootDir/source/config.gradle"

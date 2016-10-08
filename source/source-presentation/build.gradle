@@ -1,0 +1,27 @@
+apply plugin: 'idea'
+apply plugin: 'scala'
+apply from: "$rootDir/source/config.gradle"
+
+def deps = rootProject.ext.compileDeps
+def testDeps = rootProject.ext.testCompileDeps
+def testRuntime = rootProject.ext.runtimeDeps
+
+dependencies {
+  compile deps.finagleCore
+  compile deps.finagleThrift
+  compile deps.scala
+  compile deps.twitterCore
+  compile deps.twitterServer
+  compile deps.twitterStats
+
+  testCompile testDeps.junit
+  testCompile testDeps.mockito
+
+  runtime testRuntime.finagleStats
+}
+
+repositories {
+  jcenter()
+  mavenCentral()
+  maven { url "http://maven.twttr.com" }
+}

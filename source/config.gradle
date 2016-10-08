@@ -4,10 +4,18 @@
 
 /* Compile Dependencies */
 
+def FINAGLE = "6.31.0"
 def SCALA = "2.11.8"
+def TWITTER_SERVER = "1.23.0"
+def TWITTER_UTIL = "6.31.0"
 
 rootProject.ext.compileDeps = [
-        scala                 :     "org.scala-lang:scala-library:$SCALA"
+        finagleCore           :     "com.twitter:finagle-core_2.11:$FINAGLE",
+        finagleThrift         :     "com.twitter:finagle-thrift_2.11:$FINAGLE",
+        scala                 :     "org.scala-lang:scala-library:$SCALA",
+        twitterCore           :     "com.twitter:util-core_2.11:$TWITTER_UTIL",
+        twitterServer         :     "com.twitter:twitter-server_2.11:$TWITTER_SERVER",
+        twitterStats          :     "com.twitter:util-stats_2.11:$TWITTER_UTIL"
 ]
 
 
