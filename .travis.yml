@@ -21,11 +21,19 @@ branches:
 notifications:
   email: false
 
-script: "./gradlew check"
+script: 
+  - wget http://services.gradle.org/distributions/gradle-3.1-bin.zip
+  - unzip gradle-3.1-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-3.1
+  - export PATH=$GRADLE_HOME/bin:$PATH
+  - gradle check
 
 sudo: false
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-  - $HOME/.m2
-  - $HOME/.gradle
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
