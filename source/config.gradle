@@ -5,6 +5,7 @@
 /* Compile Dependencies */
 
 def FINAGLE = "6.31.0"
+def FINATRA = "2.1.6"
 def SCALA = "2.11.8"
 def TWITTER_SERVER = "1.23.0"
 def TWITTER_UTIL = "6.31.0"
@@ -12,6 +13,9 @@ def TWITTER_UTIL = "6.31.0"
 rootProject.ext.compileDeps = [
         finagleCore           :     "com.twitter:finagle-core_2.11:$FINAGLE",
         finagleThrift         :     "com.twitter:finagle-thrift_2.11:$FINAGLE",
+        finatraHttp           :     "com.twitter.finatra:finatra-http_2.11:$FINATRA",
+        finatraClient         :     "com.twitter.finatra:finatra-httpclient_2.11:$FINATRA",
+        finatraSlf4j           :     "com.twitter.finatra:finatra-slf4j_2.11:$FINATRA",
         scala                 :     "org.scala-lang:scala-library:$SCALA",
         twitterCore           :     "com.twitter:util-core_2.11:$TWITTER_UTIL",
         twitterServer         :     "com.twitter:twitter-server_2.11:$TWITTER_SERVER",
