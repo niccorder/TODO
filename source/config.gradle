@@ -15,7 +15,9 @@ rootProject.ext.compileDeps = [
         finagleThrift         :     "com.twitter:finagle-thrift_2.11:$FINAGLE",
         finatraHttp           :     "com.twitter.finatra:finatra-http_2.11:$FINATRA",
         finatraClient         :     "com.twitter.finatra:finatra-httpclient_2.11:$FINATRA",
-        finatraSlf4j           :     "com.twitter.finatra:finatra-slf4j_2.11:$FINATRA",
+        finatraJackson        :     "com.twitter.finatra:finatra-jackson_2.11:$FINATRA",
+        finatraSlf4j          :     "com.twitter.finatra:finatra-slf4j_2.11:$FINATRA",
+        finatraThrift         :     "com.twitter.finatra:finatra-thrift_2.11:$FINATRA",
         scala                 :     "org.scala-lang:scala-library:$SCALA",
         twitterCore           :     "com.twitter:util-core_2.11:$TWITTER_UTIL",
         twitterServer         :     "com.twitter:twitter-server_2.11:$TWITTER_SERVER",
@@ -38,6 +40,10 @@ def MOCKITO = "2.1.0"
 def SCALA_TEST = "3.0.0"
 
 rootProject.ext.testCompileDeps = [
+        injectApp             :     "com.twitter.inject:inject-app_2.11:$FINATRA",
+        injectCore            :     "com.twitter.inject:inject-core_2.11:$FINATRA",
+        injectServer          :     "com.twitter.inject:inject-server_2.11:$FINATRA",
+        injectModules         :     "com.twitter.inject:inject-modules_2.11:$FINATRA",
         junit                 :     "junit:junit:$JUNIT",
         mockito               :     "org.mockito:mockito-core:$MOCKITO",
         scalaTest             :     "org.scalatest:scalatest_2.11:$SCALA_TEST"

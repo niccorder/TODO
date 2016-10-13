@@ -10,9 +10,17 @@ dependencies {
   compile deps.finatraClient
   compile deps.finatraHttp
   compile deps.finatraSlf4j
+  compile deps.finatraJackson
+  compile deps.finatraThrift
   compile deps.scala
   compile deps.twitterStats
 
+  testCompile deps.finatraHttp
+  testCompile deps.finatraJackson
+  testCompile testDeps.injectApp
+  testCompile testDeps.injectCore
+  testCompile testDeps.injectServer
+  testCompile testDeps.injectModules
   testCompile testDeps.junit
   testCompile testDeps.mockito
   testCompile testDeps.scalaTest
